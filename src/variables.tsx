@@ -1,41 +1,58 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from "react-dom";
+import styled from 'styled-components'
 
 type Props = {};
+const Wrapper=styled.div`
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+`
+const Header=styled.div`
+    font-size: 42px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 10px;
+    color: #2f353c;
+`
+const GridContainer = styled.div`
+    width:80%;
+    grid-template-columns:repeat(3,1fr);
+    display:grid;
+    padding:10px;
+`
+const TitleRow=styled.div`
+    background:#1d2227;
+    color: white;
+    font-size: 20px;
+    font-weight
+    display: flex;
+    flex-direction: row;
+    padding: 12px;
+    padding-left:30px;
+`
 
 const Variables = (props: Props) => {
+    
     return(
-        <div className="container">
-            HELLO THERE
-        <table className="table table-hover">
-            <thead className="thead-dark">
-            <tr>
-                <th scope="col">Variable</th>
-                <th scope="col">Value</th>
-                <th scope="col"></th>
-            </tr>
-            </thead>
-        </table>
-        <div className="modal">
-            <div className="modal-content">
-                <div className="container">
-                    <form>
-                        <div className="form-group">
-                            <input type="text" className="form-control" id="key" placeholder="Name"/>
-                        </div>
-                        <div className="form-group">
-                            <textarea className="form-control" id="value" rows={8} placeholder="Enter Value Here"></textarea>
-                        </div>
-                    </form>
-                    <button id="edit" type="button" className="btn btn-dark">Save Changes</button>
-                    <button id="delete" type="button" className="btn btn-dark">Delete</button>
-                    <br/>
-                <div id="message">
-            </div>
-        </div>
-    </div>
-</div>
-</div>)
+        <Wrapper>
+            <Header>Snippet Expander Plugin</Header>
+            <GridContainer>
+                {/* ROW 1 */}
+                <TitleRow>
+                    Shortcut
+                </TitleRow>
+                <TitleRow>
+                    Value
+                </TitleRow>
+                <TitleRow/>
+                {/* Other Rows */}
+
+            </GridContainer>
+    </Wrapper>)
 };
 
 ReactDOM.render(
