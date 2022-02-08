@@ -32,3 +32,25 @@ export const TitleRow=styled.div`
     padding: 12px;
     padding-left:30px;
 `
+export const Shortcut = styled.div`
+    color:#212529;
+    padding: 8px;
+    padding-left:30px;
+`
+
+export const ValueEditGrid = styled.div`
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+`
+export const Value=styled.div`
+    color:#212529;
+    padding: 8px;
+    padding-left:30px;
+`
+export const Edit=styled.div`
+    
+`
+export const Nothing=styled.div`
+    font-size:24px;
+    padding:20px;
+`
