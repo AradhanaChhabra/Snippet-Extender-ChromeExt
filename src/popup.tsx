@@ -30,7 +30,6 @@ const Popup = () => {
 
   const editSnippetHandler = () => {
     chrome.tabs.create({ url: "variables.html" });
-    console.log("edit it");
   }
   const findSnippetHandler = () => {
     // tryGetValue()

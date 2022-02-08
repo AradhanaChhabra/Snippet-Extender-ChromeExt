@@ -7,7 +7,6 @@ async function tryReplace(element: any, starting: number, ending: number) {
         let key_value = Object.entries(result)[0]
         // if the variableName key is present in storage
         if (key_value != undefined) {
-            console.log("bro");
             element.value = element.value.substring(0, starting) + key_value[1] + element.value.substring(ending + 1,
                 element.value.length);
             value = true;
