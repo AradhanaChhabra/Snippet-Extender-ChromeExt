@@ -16,27 +16,8 @@ async function tryReplace(element: any, starting: number, ending: number) {
             value = false;
         }
     })
-    console.log(value);
     return value;
 }
-
-// async function tryReplace(element:any, starting:number, ending:number) {
-//     var variableName = element.value.substring(starting + 1, ending)
-//     // retrieve the value from chrome storage
-//     var value: any = 
-//     console.log(value);
-//     if (value != null) {
-//         var key_value = Object.entries(value)[0];
-//         console.log(key_value);
-//         if (key_value != undefined){
-//             element.value = element.value.substring(0, starting) + key_value[1] + element.value.substring(ending+1,
-//                 element.value.length)
-//                 return true
-//         }
-        
-//     }
-//     return false
-// }
 
 async function tryParse(element:any) {
     var i = 0;
@@ -46,13 +27,13 @@ async function tryParse(element:any) {
             let j = i + 1
             // all the values inside the input enclosed with arrows will be replaced
             while (j < element.value.length && element.value[j]!= ">") { j += 1 }
-            if (j  != element.value.length) { 
+            if (j  != element.value.length) {
                 ifReplaced = await tryReplace(element, i, j)
             }
         }
         i += 1
     }
-    // remove the period after replacing 
+    // remove the period after replacing
     if (ifReplaced && element.value[element.value.length-1] == ".") {
         element.value = element.value.substring(0, element.value.length-1)
     }
@@ -63,12 +44,11 @@ const addListenerToType=(type:string)=> {
     for (let x=0; x<elements.length; x++) {
         let element = elements[x]
         try {
-            // Unlike the keypress event, the keydown event is fired for all keys when a key is pressed., 
+            // Unlike the keypress event, the keydown event is fired for all keys when a key is pressed.,
             // regardless of whether they produce a character value.
             element.addEventListener('keydown', function(event:any) {
                 if (event.key == ".") {
-                    console.log(element);
-                    tryParse(element);         
+                    tryParse(element);
                 }
             })
         }
