@@ -2,14 +2,18 @@
 async function tryReplace(element: any, starting: number, ending: number) {
     // ending char is exluded
     var variableName = element.value.substring(starting + 1, ending)
-    var value;
+    let value:boolean=false;//if value is changed
     chrome.storage.sync.get(variableName, function (result) {
-        let key_value = Object.entries(result)[0]
+        let keyValuearray = Object.entries(result);
+        let key_value = keyValuearray[0];
         // if the variableName key is present in storage
         if (key_value != undefined) {
             element.value = element.value.substring(0, starting) + key_value[1] + element.value.substring(ending + 1,
                 element.value.length);
-            value = true;
+            // remove the period after replacing
+            if (element.value[element.value.length - 1] === '.') {
+                element.value = element.value.substring(0, element.value.length-1)
+            }
         }
         else {
             value = false;
@@ -18,6 +22,7 @@ async function tryReplace(element: any, starting: number, ending: number) {
     return value;
 }
 
+// function triggered with "."
 async function tryParse(element:any) {
     var i = 0;
     var ifReplaced;
@@ -31,10 +36,6 @@ async function tryParse(element:any) {
             }
         }
         i += 1
-    }
-    // remove the period after replacing
-    if (ifReplaced && element.value[element.value.length-1] == ".") {
-        element.value = element.value.substring(0, element.value.length-1)
     }
 }
 
