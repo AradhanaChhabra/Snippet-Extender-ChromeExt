@@ -19,6 +19,12 @@ Save customized snippets and use it anywhere in your browser
 * Now move to the destination where zip file is stored and select the extracted folder.
 * Snippet extender is added to your browser
 
+## Working
+
+
+https://user-images.githubusercontent.com/58147211/153414877-55d61a1c-33f0-4041-9167-fa0f6949b4cc.mp4
+
+
 ## Project Structure
 
 * src/typescript: TypeScript source files
