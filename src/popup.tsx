@@ -1,5 +1,6 @@
 import React, { useEffect, useState,useRef } from "react";
 import ReactDOM from "react-dom";
+import { Button, ButtonContainer, Container, Display, LookupButton, LookupInput, LookupWrapper, Message, ModalInput, TextArea, ValueFound } from "./PopupElements";
 
 const Popup = () => {
   const [message, setMessage] = useState([false, ""]);
@@ -24,7 +25,7 @@ const Popup = () => {
       chrome.storage.sync.set({ [key]: value }, () => setMessage([true,"variable has been set"]));
     }
     else {
-      setMessage([true,"name or value cannot be empty"])
+      setMessage([false,"name or value cannot be empty"])
     }
   }
 
@@ -46,7 +47,7 @@ const Popup = () => {
 
           else {
             setLookUpValue({
-              exist: true,
+              exist: false,
               value:"variable not found"
               })
           }
@@ -69,45 +70,45 @@ function copyToClipboard(text:string) {
   });
 }
   return (
-    <div className="container" style={{
-      "background": "#fffde8",
-      "padding": "10px",
-      "color": "#00204a",
-      "display": "flex",
-      "flexDirection": "column",
-      "alignContent":"stretch"
-    }}>
+    <Container>
       <form style={{"width":"100%"}}>
-          <div className="form-group" style={{"width":"100%"}}>
-            <input type="text" className="form-control" id="key" ref={shortcutRef} placeholder="Shortcut for the snippet" style={{"width":"100%","marginBottom":"4px"}}/>
-          </div>
-          <div className="form-group" style={{"width":"100%"}}>
-          <textarea style={{ "width": "100%" }} className="form-control" id="value" ref={snippetTextRef} rows={8} placeholder="Type the snippet text here"></textarea>
-          </div>
+        <ModalInput type="text" id="key" ref={shortcutRef} placeholder="Shortcut for the snippet"/>
+        <TextArea
+          id="value"
+          ref={snippetTextRef}
+          rows={5}
+          placeholder="Type the snippet text here"
+        />
       </form>
-      <button id="save" type="button" className="btn btn-dark" onClick={saveSnippetHandler}>Save</button>
-      <button id="variables" type="button" className="btn btn-dark" onClick={editSnippetHandler}>Edit Variables</button>
-
-        <br/>
-
-      <div id="message">{message[0]&&message[1]}</div>
-
+      <ButtonContainer>
+        <Button type="button"  onClick={saveSnippetHandler}>Save</Button>
+        <Button type="button"  onClick={editSnippetHandler}>Edit Variables</Button>
+      </ButtonContainer>
+      <Message error={!message[0]}>{message[1]!=""&&message[1]}</Message>
       <form>
-        <div className="input-group-prepend">
-          <input type="text" className="form-control" id="lookup" ref={findValueRef} placeholder="Quick Variable Lookup"/>
-            <button id="find" type="button" className="btn btn-dark" onClick={findSnippetHandler}>Find</button>
-          </div>
+        <LookupWrapper>
+          <LookupInput
+            type="text"
+            ref={findValueRef}
+            placeholder="Quick Variable Lookup"
+          />
+          <LookupButton
+            id="find"
+            type="button"
+            onClick={findSnippetHandler}>Find</LookupButton>
+        </LookupWrapper>
       </form>
 
-      <br/>
-      <div id="lookup-value">
-        {lookupValue.exist && <>
-          <textarea style={{"display":"block"}}className="lookupText" rows={3} readOnly={true} value={lookupValue.value} />
-          <button id="copyBtn" onClick={copyBtnHandler} disabled={copyBtnAtt.disabled}>{copyBtnAtt.innerText}</button>
+      <br />
+      
+      <ValueFound>
+        {lookupValue.value!="" && <>
+          <Display error={!lookupValue.exist}>{lookupValue.value}</Display>
+          {lookupValue.exist&&<Button onClick={copyBtnHandler} disabled={copyBtnAtt.disabled}>{copyBtnAtt.innerText}</Button>}
         </>}
-      </div>
 
-    </div>
+      </ValueFound>
+    </Container>
   );
 };
 

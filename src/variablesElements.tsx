@@ -108,32 +108,91 @@ export const Container = styled.div<Props>`
     flex-direction:column;
 	position:fixed;
     top:30%;
-	background: #f7f7f7;
-	width: 60%;
+	width: 36%;
 	height: auto;
 	border-radius: 10px;
 	padding: 28px;
     font-size:24px;
-	color: #393972b2;
     box-shadow: 0 10px 25px 4px rgb(2 2 2 / 50%);
     z-index:40;
+    background: #ffffff;
+    color: #2c2a2a;
+    align-content:stretch;
+    @media (max-width: 940px) {
+        width:60%;
+  }
 `;
+interface type{
+    delete?:boolean
+}
 export const ModalInput = styled.input`
-    width:100%;
-    padding:6px;
-    margin:10px 0;
+    width: calc(100% - 40px);
+    margin-bottom: 8px;
+    color: rgb(19, 18, 18);
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    background:rgb(245 245 245);
+
+    ::placeholder {
+       color: #93a8b4;
+       font-size:16px;
+   }
+   &:hover {
+    border:1px solid #32435e;
+  }
+    &:focus {
+            outline: none;
+            border:2px solid #162741;
+    }
 `
 export const TextArea=styled.textarea`
-    width:100%;
+    width: calc(100% - 40px);
+    margin-bottom: 8px;
+    color: rgb(19, 18, 18);
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    background:rgb(245 245 245);
+
+    ::placeholder {
+       color: #93a8b4;
+       font-size:16px;
+   }
+   &:hover {
+    border:1px solid #32435e;
+  }
+    &:focus {
+            outline: none;
+            border:2px solid #162741;
+    }
 `
 export const ButtonWrapper=styled.div`
     display:flex;
     flex-direction:row;
+    justify-content:space-between;
 `
-export const Button=styled.button`
+export const Button=styled.button<type>`
     margin:0 20px;
-    padding:8px;
     font-size:18px;
+    padding: 10px 18px;
+    font-weight: 600;
+    background:  ${p=>p.delete?'rgb(150 23 34)':'rgb(13 16 33)'};
+    color: #ffffff;
+    border-radius: 6px;
+    border:none;
+
+    &:hover {
+    background: ${p=>p.delete?'rgb(134 38 46)':'#201e2c'};
+    border:${p=>p.delete?'1px solid #8d2828':'1px solid #22212e'};
+  }
+  @media (max-width: 940px) {
+    font-size: 16px;
+    padding: 12px 10px;
+    font-weight: 500;
+  }
 `
 export const Message = styled.div`
     color:#499169;

@@ -78,11 +78,11 @@ const Variables = (props: Props) => {
                 <Container show={showModal}>
                     <form>
                         <ModalInput ref={inputRef}type="text" placeholder="Name" defaultValue={input}/>
-                        <TextArea ref={valueRef} rows={8} placeholder="Enter Value Here" defaultValue={value}/>
+                        <TextArea ref={valueRef} rows={6} placeholder="Enter Value Here" defaultValue={value}/>
                     </form>
                     <ButtonWrapper>
                         <Button onClick={changeShortcut}>Save Changes</Button>
-                        <Button onClick={()=>deleteKey(inputRef.current?.defaultValue)}>Delete</Button>
+                        <Button delete={true} onClick={()=>deleteKey(inputRef.current?.defaultValue)}>Delete</Button>
                     </ButtonWrapper>
                     {showEditError&&<Message>Shortcut/Value Can't be Empty</Message>}
                 </Container>
