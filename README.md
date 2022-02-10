@@ -21,7 +21,9 @@ Save customized snippets and use it anywhere in your browser
 
 ## Working
 
-Enclose the shortcut between arrows<> and use period key (".") for triggering the expanding of th snippet. 
+Enclose the shortcut between arrows<> and use period key (".") for triggering the expanding of th snippet.
+
+
 https://user-images.githubusercontent.com/58147211/153414877-55d61a1c-33f0-4041-9167-fa0f6949b4cc.mp4
 
 
