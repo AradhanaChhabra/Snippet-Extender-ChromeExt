@@ -1,29 +1,23 @@
-# Chrome Extension TypeScript Starter
+# Snippet Expander Chrome Plugin
 
-![build](https://github.com/chibat/chrome-extension-typescript-starter/workflows/build/badge.svg)
+Save customized snippets and use it anywhere in your browser
 
-Chrome Extension, TypeScript and Visual Studio Code
+## Downloadable Link
 
-## Prerequisites
+* [zip file](https://drive.google.com/uc?export=download&id=1egwztO5fdPEec21OuyeL_69KS0xro9ky) (Current Version)
 
-* [node + npm](https://nodejs.org/) (Current Version)
+## How to install the extension
 
-## Option
+* Download the zip file from the link on your desktop and extract it.
+* On your computer, open Chrome. At the top right, click More then More tools and then Extensions.
+* Turn on the Developer Mode at the top right corner.
 
-* [Visual Studio Code](https://code.visualstudio.com/)
+* **Alternative**
+* You can directly open [chrome://extensions/](chrome://extensions/)
 
-## Includes the following
-
-* TypeScript
-* Webpack
-* React
-* Jest
-* Example Code
-    * Chrome Storage
-    * Options Version 2
-    * content script
-    * count up badge number
-    * background
+* Click on the **Load Unpacked** at the top left corner of your chrome browser window
+* Now move to the destination where zip file is stored and select the extracted folder.
+* Snippet extender is added to your browser
 
 ## Project Structure
 
@@ -32,39 +26,13 @@ Chrome Extension, TypeScript and Visual Studio Code
 * dist: Chrome Extension directory
 * dist/js: Generated JavaScript files
 
-## Setup
-
-```
-npm install
-```
-
-## Import as Visual Studio Code project
-
-...
-
 ## Build
 
 ```
 npm run build
 ```
 
-## Build in watch mode
-
-### terminal
-
-```
-npm run watch
-```
-
-### Visual Studio Code
-
-Run watch mode.
-
-type `Ctrl + Shift + B`
-
 ## Load extension to chrome
 
 Load `dist` directory
 
-## Test
-`npx jest` or `npm run test`
