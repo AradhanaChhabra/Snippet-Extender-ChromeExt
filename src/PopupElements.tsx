@@ -18,7 +18,7 @@ export const ModalInput=styled.input`
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 4px;
-    border: none;
+    border:1px solid #fff;
     background:rgb(245 245 245);
     font-family:'Ubuntu', sans-serif;
 
@@ -42,7 +42,7 @@ export const TextArea=styled.textarea`
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 4px;
-    border: none;
+    border: 1px solid #fff;
     background:rgb(245 245 245);
 
     ::placeholder {
@@ -70,7 +70,7 @@ export const Button=styled.button`
     background: rgb(13 16 33);
     color: #ffffff;
     border-radius: 6px;
-    border:none;
+    border:1px solid #fff;
 
     &:hover {
     background: #201e2c;
@@ -96,7 +96,7 @@ export const LookupButton = styled.button`
     background: rgb(50 62 78);
     color: #ffffff;
     border-radius: 6px;
-    border:none;
+    border:1px solid white;
 
     &:hover {
     background: #18202e;

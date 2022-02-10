@@ -108,7 +108,7 @@
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 4px;
-    border: none;
+    border: 1px solid #ffffff;
     background:rgb(245 245 245);
 
     ::placeholder {
@@ -119,7 +119,6 @@
     border:1px solid #32435e;
   }
     &:focus {
-            outline: none;
             border:2px solid #162741;
     }
 `,t.TextArea=o.default.textarea`
@@ -129,7 +128,7 @@
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 4px;
-    border: none;
+    border:1px solid #fff;
     background:rgb(245 245 245);
 
     ::placeholder {
@@ -155,7 +154,7 @@
     background:  ${e=>e.delete?"rgb(150 23 34)":"rgb(13 16 33)"};
     color: #ffffff;
     border-radius: 6px;
-    border:none;
+    border:1px solid #fff;
 
     &:hover {
     background: ${e=>e.delete?"rgb(134 38 46)":"#201e2c"};

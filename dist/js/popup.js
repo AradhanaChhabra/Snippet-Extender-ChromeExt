@@ -13,7 +13,7 @@
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 4px;
-    border: none;
+    border:1px solid #fff;
     background:rgb(245 245 245);
     font-family:'Ubuntu', sans-serif;
 
@@ -36,7 +36,7 @@
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 4px;
-    border: none;
+    border: 1px solid #fff;
     background:rgb(245 245 245);
 
     ::placeholder {
@@ -62,7 +62,7 @@
     background: rgb(13 16 33);
     color: #ffffff;
     border-radius: 6px;
-    border:none;
+    border:1px solid #fff;
 
     &:hover {
     background: #201e2c;
@@ -85,7 +85,7 @@
     background: rgb(50 62 78);
     color: #ffffff;
     border-radius: 6px;
-    border:none;
+    border:1px solid white;
 
     &:hover {
     background: #18202e;

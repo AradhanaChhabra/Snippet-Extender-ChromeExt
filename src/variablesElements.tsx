@@ -132,7 +132,7 @@ export const ModalInput = styled.input`
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 4px;
-    border: none;
+    border: 1px solid #ffffff;
     background:rgb(245 245 245);
 
     ::placeholder {
@@ -143,7 +143,6 @@ export const ModalInput = styled.input`
     border:1px solid #32435e;
   }
     &:focus {
-            outline: none;
             border:2px solid #162741;
     }
 `
@@ -154,7 +153,7 @@ export const TextArea=styled.textarea`
     font-size: 20px;
     padding: 10px 20px;
     border-radius: 4px;
-    border: none;
+    border:1px solid #fff;
     background:rgb(245 245 245);
 
     ::placeholder {
@@ -182,7 +181,7 @@ export const Button=styled.button<type>`
     background:  ${p=>p.delete?'rgb(150 23 34)':'rgb(13 16 33)'};
     color: #ffffff;
     border-radius: 6px;
-    border:none;
+    border:1px solid #fff;
 
     &:hover {
     background: ${p=>p.delete?'rgb(134 38 46)':'#201e2c'};
